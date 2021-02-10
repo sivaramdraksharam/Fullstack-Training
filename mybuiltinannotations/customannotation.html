@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Custom Annotation</title>
+</head>
+<body>
+<h2>How to create basic custom annotation?</h2>
+<ul>
+<li>
+Annotations are created by using @ sign, followed by the keyword interface, and followed by annotation name
+</li>
+<li>
+Members can be decleared as shown in the example, it looks like methods. The example defines two members called name and desc. We should not provide implementation for these members.
+</li>
+<li>All annotations extends java.lang.annotation.Annotation interface. Annotations cannot include any extends caluse.
+</li>
+</ul>
+<h3>Points to remember for java custom annotation signature</h3>
+<ol>
+<li>Method should not have any throws clauses</li>
+<li>Method should return one of the following: primitive data types, String, Class, enum or array of these data types.</li>
+<li>Method should not have any parameter.</li>
+<li>We should attach @ just before interface keyword to define annotation.</li>
+<li>It may assign a default value to the method.</li>
+</ol>
+
+<h4>Types of Annotation</h4>
+<ul type="circle">
+<li>Marker Annotation: An annotation that has no method, is called marker annotation</li>@Override and @Deprecated are marker annotations.
+<li>Single-Value Annotation: An annotation that has one method, is called single-value annotation</li>
+<u>Defining annotation:</u><br>
+@interface MyAnnotation{  
+int value();  
+}  
+We can provide the default value also. For example:
+
+@interface MyAnnotation{  
+int value() default 0;  
+}  
+<u>Applying annotation</u>
+@MyAnnotation(value=10) 
+<li>Multi-Value Annotation: <li>
+<u>Defining annotation:</u><br>
+@interface MyAnnotation{  
+int value1() default 1;  
+String value2() default "";  
+String value3() default "xyz";  
+}  
+<u>Applying annotation</u>
+@MyAnnotation(value1=10,value2="Sivaram Prasad",value3="Chirala") 
+</ul>
+</body>
+</html>
