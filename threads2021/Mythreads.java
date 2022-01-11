@@ -1,4 +1,5 @@
 package threads2021;
+
 //creating thread by extending java.lang.Thread class
 class Mythread extends Thread
 {
@@ -19,7 +20,7 @@ class Myruannablethread implements Runnable
 	
 	Myruannablethread()
 	{
-		Thread.currentThread().setName("Myrunnablethread is started");
+		Thread.currentThread().setName("Myrunnablethread");
 	}
 	@Override
 	public void run() {
@@ -33,16 +34,13 @@ public class Mythreads {
 	public static void main(String ... args ) {
 		//creating thread by extending Thread class
 		Mythread mt1=new Mythread();
-		System.out.println("current thread is:"+mt1.getName());
+		//System.out.println("current thread is:"+mt1.toString());
 		mt1.start();
-		Mythread mt2=new Mythread();
-		System.out.println("current thread is:"+mt2.getName());
-		mt2.start();
+		Myruannablethread mt2=new Myruannablethread();
+		//System.out.println("current thread is:"+mt2.toString());
+		mt2.run();
 		
 		
-		
-		
-
 	}
 
 }
