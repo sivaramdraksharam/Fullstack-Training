@@ -1,7 +1,7 @@
 package abstractclasses;
 
 import java.util.Scanner;
-
+//create abstract class 
 public abstract class Account {
 	public static  Account a;
 	private String accountNo;
